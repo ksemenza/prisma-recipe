@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react'
-import { graphql, compose, withApollo }  from 'react-apollo'
+import { graphql, withApollo }  from 'react-apollo'
 import {Card, Col, Row, Empty, Spin, Button, notification} from 'antd'
+import * as compose from 'lodash.flowright';
 
 
 //queries
