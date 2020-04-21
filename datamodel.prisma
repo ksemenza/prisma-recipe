@@ -1,4 +1,7 @@
-type User {
+type Tag {
   id: ID! @id
-  name: String!
+  name: String! 
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
 }
