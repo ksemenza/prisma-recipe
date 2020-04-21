@@ -57,6 +57,7 @@ type Tag {
   name: String!
   createdAt: DateTime!
   updatedAt: DateTime!
+  isPublished: Boolean!
 }
 
 type TagConnection {
@@ -68,6 +69,7 @@ type TagConnection {
 input TagCreateInput {
   id: ID
   name: String!
+  isPublished: Boolean
 }
 
 type TagEdge {
@@ -84,6 +86,8 @@ enum TagOrderByInput {
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
+  isPublished_ASC
+  isPublished_DESC
 }
 
 type TagPreviousValues {
@@ -91,6 +95,7 @@ type TagPreviousValues {
   name: String!
   createdAt: DateTime!
   updatedAt: DateTime!
+  isPublished: Boolean!
 }
 
 type TagSubscriptionPayload {
@@ -113,10 +118,12 @@ input TagSubscriptionWhereInput {
 
 input TagUpdateInput {
   name: String
+  isPublished: Boolean
 }
 
 input TagUpdateManyMutationInput {
   name: String
+  isPublished: Boolean
 }
 
 input TagWhereInput {
@@ -164,6 +171,8 @@ input TagWhereInput {
   updatedAt_lte: DateTime
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
+  isPublished: Boolean
+  isPublished_not: Boolean
   AND: [TagWhereInput!]
   OR: [TagWhereInput!]
   NOT: [TagWhereInput!]
@@ -171,6 +180,7 @@ input TagWhereInput {
 
 input TagWhereUniqueInput {
   id: ID
+  name: String
 }
 `
       }

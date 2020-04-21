@@ -1,7 +1,7 @@
 type Tag {
   id: ID! @id
-  name: String! 
+  name: String! @unique
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-
+  isPublished: Boolean! @default(value:true)
 }
