@@ -109,12 +109,15 @@ export type TagOrderByInput =
   | "createdAt_ASC"
   | "createdAt_DESC"
   | "updatedAt_ASC"
-  | "updatedAt_DESC";
+  | "updatedAt_DESC"
+  | "isPublished_ASC"
+  | "isPublished_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
 export type TagWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
+  name?: Maybe<String>;
 }>;
 
 export interface TagWhereInput {
@@ -162,6 +165,8 @@ export interface TagWhereInput {
   updatedAt_lte?: Maybe<DateTimeInput>;
   updatedAt_gt?: Maybe<DateTimeInput>;
   updatedAt_gte?: Maybe<DateTimeInput>;
+  isPublished?: Maybe<Boolean>;
+  isPublished_not?: Maybe<Boolean>;
   AND?: Maybe<TagWhereInput[] | TagWhereInput>;
   OR?: Maybe<TagWhereInput[] | TagWhereInput>;
   NOT?: Maybe<TagWhereInput[] | TagWhereInput>;
@@ -170,14 +175,17 @@ export interface TagWhereInput {
 export interface TagCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
+  isPublished?: Maybe<Boolean>;
 }
 
 export interface TagUpdateInput {
   name?: Maybe<String>;
+  isPublished?: Maybe<Boolean>;
 }
 
 export interface TagUpdateManyMutationInput {
   name?: Maybe<String>;
+  isPublished?: Maybe<Boolean>;
 }
 
 export interface TagSubscriptionWhereInput {
@@ -200,6 +208,7 @@ export interface Tag {
   name: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
+  isPublished: Boolean;
 }
 
 export interface TagPromise extends Promise<Tag>, Fragmentable {
@@ -207,6 +216,7 @@ export interface TagPromise extends Promise<Tag>, Fragmentable {
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
+  isPublished: () => Promise<Boolean>;
 }
 
 export interface TagSubscription
@@ -216,6 +226,7 @@ export interface TagSubscription
   name: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  isPublished: () => Promise<AsyncIterator<Boolean>>;
 }
 
 export interface TagNullablePromise extends Promise<Tag | null>, Fragmentable {
@@ -223,6 +234,7 @@ export interface TagNullablePromise extends Promise<Tag | null>, Fragmentable {
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
+  isPublished: () => Promise<Boolean>;
 }
 
 export interface TagConnection {
@@ -348,6 +360,7 @@ export interface TagPreviousValues {
   name: String;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
+  isPublished: Boolean;
 }
 
 export interface TagPreviousValuesPromise
@@ -357,6 +370,7 @@ export interface TagPreviousValuesPromise
   name: () => Promise<String>;
   createdAt: () => Promise<DateTimeOutput>;
   updatedAt: () => Promise<DateTimeOutput>;
+  isPublished: () => Promise<Boolean>;
 }
 
 export interface TagPreviousValuesSubscription
@@ -366,6 +380,7 @@ export interface TagPreviousValuesSubscription
   name: () => Promise<AsyncIterator<String>>;
   createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
   updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  isPublished: () => Promise<AsyncIterator<Boolean>>;
 }
 
 /*
@@ -390,14 +405,14 @@ DateTime scalar output type, which is always a string
 export type DateTimeOutput = string;
 
 /*
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
-*/
-export type Int = number;
-
-/*
 The `Boolean` scalar type represents `true` or `false`.
 */
 export type Boolean = boolean;
+
+/*
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+*/
+export type Int = number;
 
 export type Long = string;
 
