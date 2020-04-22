@@ -3,7 +3,6 @@ import { graphql, withApollo }  from 'react-apollo'
 import {Card, Col, Row, Empty, Spin, Button, notification} from 'antd'
 import * as compose from 'lodash.flowright';
 
-
 //queries
 import GetAllPublishedTags from '../../graphql/queries/GetAllPublishedTags'
 import GetSingleTag from '../../graphql/queries/GetSingleTag'
