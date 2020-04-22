@@ -21,16 +21,16 @@ Create new database
 PostgresSQL
 Prisma JS Client
 
-# Three files are created
+### Three files are created
 prisma.yml Prisma Service definition
 datamodel.prisma 
 
-# RUN 
+### RUN 
 docker-compose up -d
-# STOP 
+### STOP 
 docker-compose stop
 
-# PUT IN 
+### PUT IN 
 datamodel.prisma (file)
 type Tag {
   id: ID! @id
@@ -40,11 +40,11 @@ type Tag {
   isPublished: Boolean! @default(value:true)
 
 }
-# START SERVER
+### START SERVER
 prisma deploy
 
 
-# RETURNS
+### RETURNS
 Changes:
 
   Tag (Type)
