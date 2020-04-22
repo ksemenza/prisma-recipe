@@ -12,7 +12,7 @@ cd new-app-dir
 Initialize Primsa Server
 prisma init
 
-# PROMPT INIT
+### PROMPT INIT
 
 (Choices)
 
@@ -67,16 +67,16 @@ You can view & edit your data here:
 
   Prisma Admin: http://localhost:4466/_admin
 
-# RUN
+### RUN
 create-react-app client
 
 cd client
 
-# Install Dep
+### Install Dep
 npm install apollo-react-apollo graph-tag graphql
 npm install @material-ui/core
 npm install antd
-# REPLACE (Due to Error)
+### REPLACE (Due to Error)
 compose from 'react-apollo'
 npm install lodash.flowright
 import * as compose from 'lodash.flowright';
