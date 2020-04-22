@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
-import AllTagsContainer from '../containers/AllTagsContainer/AllTagsContainer';
+import AllTagsContainer from '../containers/AllTagsContainer';
 
+=======
+import AllTagsContainer from '../containers/AllTagsContainer';
+
+>>>>>>> master
 class App extends Component {
   render() {
     return (
